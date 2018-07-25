@@ -21,9 +21,9 @@
 
 package org.jlib.iterator;
 
-import java.util.Iterator;
-
 import lombok.experimental.UtilityClass;
+
+import java.util.Iterator;
 
 /**
  * {@link Iterator} utility.
@@ -128,6 +128,9 @@ public final class Iterables {
      *        {@link Iterable} providing the looked up {@link Item}s;
      *        if {@code lookedUpItems} provides a {@code null} value, the behaviour is unspecified,
      *        an {@link Exception} may be thrown
+     *
+     * @param <Item>
+     *        type of the looked up items
      *
      * @return {@code true} if this IterableContainer contains all of the Items
      *         contained by {@code otherContainer}; {@code false} otherwise
