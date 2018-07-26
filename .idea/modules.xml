@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jlib-iterator.iml" filepath="$PROJECT_DIR$/jlib-iterator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlib-iterator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jlib-iterator_main.iml" group="jlib-iterator" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlib-iterator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jlib-iterator_test.iml" group="jlib-iterator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlib-iterable.iml" filepath="$PROJECT_DIR$/.idea/modules/jlib-iterable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlib-iterable_main.iml" filepath="$PROJECT_DIR$/.idea/modules/jlib-iterable_main.iml" group="jlib-iterable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jlib-iterable_test.iml" filepath="$PROJECT_DIR$/.idea/modules/jlib-iterable_test.iml" group="jlib-iterable" />
     </modules>
   </component>
 </project>

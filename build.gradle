@@ -19,7 +19,6 @@
  *     limitations under the License.
  */
 
-
 plugins {
     id 'java'
     id 'base'
@@ -29,6 +28,11 @@ plugins {
     id 'net.researchgate.release' version '2.6.0'
 }
 
+version = '1.0.0-SNAPSHOT'
+
+description = 'jlib iterable framework'
+ext.detailedDescription = 'jlib framework providing operations on iterables and iterators as well as means to implement own iterables'
+
 apply from: 'jlib.gradle'
 
 repositories {
@@ -36,5 +40,6 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.jlib:jlib-message:1.0.0-SNAPSHOT'
     implementation 'org.jlib:jlib-exception:1.0.0-SNAPSHOT'
 }

@@ -7,10 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jlib-iterator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="jlib-iterable_main" target="1.8" />
+      <module name="jlib-iterable_test" target="1.8" />
       <module name="jlib-iterator" target="8" />
       <module name="jlib-iterator_main" target="1.8" />
       <module name="jlib-iterator_test" target="1.8" />
