@@ -19,25 +19,23 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
 import java.util.Iterator;
 
 /**
- * {@link InvalidIteratorStateException} thrown when there is Item to remove by a {@link Iterator}.
+ * Iterator state.
  *
- * @author Igor Akkerman
+ * @param <Item>
+ *        type of the items traversed by the {@link Iterator}.
  */
-public class NoItemToRemoveException
-    extends InvalidIteratorStateException {
+public interface IteratorState<Item, State extends IteratorState<Item, State>>
+    extends Iterator<Item> {
 
-    private static final long serialVersionUID = 3354621909113836210L;
-
-    public NoItemToRemoveException(final Object iterated) {
-        super(iterated);
-    }
-
-    public NoItemToRemoveException(final Object iterated, final Exception cause) {
-        super(iterated, cause);
-    }
+    /**
+     * Returns the next {@link IteratorState}
+     *
+     * @return next {@link IteratorState}
+     */
+    State nextState();
 }

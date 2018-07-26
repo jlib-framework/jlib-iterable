@@ -19,7 +19,7 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
 public abstract class ForwardingIteratorState<Item, Itble extends BidiIterable<Item>, State extends
     ForwardingIteratorState<Item, Itble, State>>

@@ -19,7 +19,7 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
 public final class StuckIteratorState<Item, Itble extends Iterable<Item>, State extends BidiIteratorState<Item, State>>
     extends IterableAware<Item, Itble>

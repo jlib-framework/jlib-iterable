@@ -19,18 +19,25 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
-public abstract class IterableAware<Item, Itble extends Iterable<Item>> {
+import java.util.Iterator;
 
-    private final Itble iterable;
+/**
+ * {@link InvalidIteratorStateException} thrown when there is Item to remove by a {@link Iterator}.
+ *
+ * @author Igor Akkerman
+ */
+public class NoItemToRemoveException
+    extends InvalidIteratorStateException {
 
-    public IterableAware(final Itble iterable) {
+    private static final long serialVersionUID = 3354621909113836210L;
 
-        this.iterable = iterable;
+    public NoItemToRemoveException(final Object iterated) {
+        super(iterated);
     }
 
-    protected Itble getIterable() {
-        return iterable;
+    public NoItemToRemoveException(final Object iterated, final Exception cause) {
+        super(iterated, cause);
     }
 }

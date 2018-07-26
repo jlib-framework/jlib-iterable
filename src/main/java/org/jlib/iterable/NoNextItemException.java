@@ -19,7 +19,7 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

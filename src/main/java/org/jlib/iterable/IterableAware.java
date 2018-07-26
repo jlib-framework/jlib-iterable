@@ -19,23 +19,18 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
-import java.util.Iterator;
+public abstract class IterableAware<Item, Itble extends Iterable<Item>> {
 
-/**
- * Iterator state.
- *
- * @param <Item>
- *        type of the items traversed by the {@link Iterator}.
- */
-public interface IteratorState<Item, State extends IteratorState<Item, State>>
-    extends Iterator<Item> {
+    private final Itble iterable;
 
-    /**
-     * Returns the next {@link IteratorState}
-     *
-     * @return next {@link IteratorState}
-     */
-    State nextState();
+    public IterableAware(final Itble iterable) {
+
+        this.iterable = iterable;
+    }
+
+    protected Itble getIterable() {
+        return iterable;
+    }
 }

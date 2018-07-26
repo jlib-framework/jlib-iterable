@@ -19,7 +19,7 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
 import org.jlib.exception.InvalidArgumentException;
 import org.jlib.message.Message;

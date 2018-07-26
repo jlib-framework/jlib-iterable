@@ -19,33 +19,24 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
 import java.util.Iterator;
 
 /**
- * {@link Iterator} allowing returned Items to be removed.
+ * Iterator state.
  *
  * @param <Item>
- *        type of the traversed items
- *
- * @author Igor Akkerman
+ *        type of the items traversed by the {@link Iterator}.
  */
-public interface RemoveIterator<Item>
-    extends Iterator<Item> {
+public interface BidiIteratorState<Item, State extends BidiIteratorState<Item, State>>
+    extends IteratorState<Item, State>,
+            BidiIterator<Item> {
 
     /**
-     * Removes the last Item returned by this {@link RemoveIterator}.
+     * Returns the previous {@link BidiIteratorState}
      *
-     * @throws NoItemToRemoveException
-     *         if not called immediately after a call to {@link Iterator#next()}
-     *         or a similar method
-     *
-     * @throws InvalidIterableStateException
-     *         if an error was caused by a delegate used to remove the item
+     * @return previous {@link BidiIteratorState}
      */
-    @Override
-    @SuppressWarnings("DuplicateThrows")
-    void remove()
-        throws NoItemToRemoveException, InvalidIterableStateException;
+    State previousState();
 }

@@ -19,29 +19,24 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
-public final class StatefulBidiIterator<Item, Itble extends Iterable<Item>, State extends BidiIteratorState<Item,
-    State>>
-    extends StatefulIterator<Item, Itble, State>
-    implements BidiIterator<Item> {
+/**
+ * {@link Iterable} providing  allowing Items to be removed.
+ *
+ * @param <Item>
+ *        type of the traversed items
+ *
+ * @author Igor Akkerman
+ */
+public interface RemoveIterable<Item>
+    extends Iterable<Item> {
 
-    public StatefulBidiIterator(final Itble iterable, final State initialState) {
-        super(iterable, initialState);
-    }
-
+    /**
+     * Returns a new {@link RemoveIterator} over the Items of this {@link RemoveIterable}.
+     *
+     * @return newly created iterator}
+     */
     @Override
-    public final boolean hasPrevious() {
-        return getCurrentState().hasPrevious();
-    }
-
-    @Override
-    public final Item previous()
-        throws NoNextItemException {
-        final Item previousItem = getCurrentState().next();
-
-        setCurrentState(getCurrentState().nextState());
-
-        return previousItem;
-    }
+    RemoveIterator<Item> iterator();
 }

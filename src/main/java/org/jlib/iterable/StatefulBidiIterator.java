@@ -19,24 +19,29 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
-public class SingletonIterable<Item>
-    implements BidiIterable<Item> {
+public final class StatefulBidiIterator<Item, Itble extends Iterable<Item>, State extends BidiIteratorState<Item,
+    State>>
+    extends StatefulIterator<Item, Itble, State>
+    implements BidiIterator<Item> {
 
-    private final Item item;
-
-    public SingletonIterable(final Item item) {
-
-        this.item = item;
-    }
-
-    public Item getItem() {
-        return item;
+    public StatefulBidiIterator(final Itble iterable, final State initialState) {
+        super(iterable, initialState);
     }
 
     @Override
-    public BidiIterator<Item> iterator() {
-        return new SingletonIterator<>(this);
+    public final boolean hasPrevious() {
+        return getCurrentState().hasPrevious();
+    }
+
+    @Override
+    public final Item previous()
+        throws NoNextItemException {
+        final Item previousItem = getCurrentState().next();
+
+        setCurrentState(getCurrentState().nextState());
+
+        return previousItem;
     }
 }

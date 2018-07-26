@@ -19,7 +19,7 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
 public class SingletonIterator<Item, Itble extends SingletonIterable<Item>>
     extends IterableAware<Item, Itble>

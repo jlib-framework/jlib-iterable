@@ -19,24 +19,24 @@
  *     limitations under the License.
  */
 
-package org.jlib.iterator;
+package org.jlib.iterable;
 
-import java.util.Iterator;
+public class SingletonIterable<Item>
+    implements BidiIterable<Item> {
 
-/**
- * Iterator state.
- *
- * @param <Item>
- *        type of the items traversed by the {@link Iterator}.
- */
-public interface BidiIteratorState<Item, State extends BidiIteratorState<Item, State>>
-    extends IteratorState<Item, State>,
-            BidiIterator<Item> {
+    private final Item item;
 
-    /**
-     * Returns the previous {@link BidiIteratorState}
-     *
-     * @return previous {@link BidiIteratorState}
-     */
-    State previousState();
+    public SingletonIterable(final Item item) {
+
+        this.item = item;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    @Override
+    public BidiIterator<Item> iterator() {
+        return new SingletonIterator<>(this);
+    }
 }
