@@ -24,13 +24,11 @@ package org.jlib.iterable;
 /**
  * {@link Iterable} providing  allowing Items to be removed.
  *
- * @param <Item>
- *        type of the traversed items
- *
+ * @param <Item> type of the traversed items
  * @author Igor Akkerman
  */
 public interface RemoveIterable<Item>
-    extends Iterable<Item> {
+        extends Iterable<Item> {
 
     /**
      * Returns a new {@link RemoveIterator} over the Items of this {@link RemoveIterable}.
@@ -39,4 +37,19 @@ public interface RemoveIterable<Item>
      */
     @Override
     RemoveIterator<Item> iterator();
+
+
+    /**
+     * Removes all Items of this {@link RemoveIterable}.
+     *
+     * @throws InvalidIterableStateException if an error occurs during one of the remove operations
+     */
+    default void removeAll()
+            throws InvalidIterableStateException {
+
+        for (final RemoveIterator<Item> iterator = iterator(); iterator.hasNext(); ) {
+            iterator.next();
+            iterator.remove();
+        }
+    }
 }
