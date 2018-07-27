@@ -33,12 +33,8 @@ ext.detailedDescription = 'jlib framework providing operations on iterables and 
 
 apply from: 'jlib.gradle'
 
-repositories {
-    mavenLocal()
-}
-
 dependencies {
-    implementation 'org.jlib:jlib-message:1.0.0-SNAPSHOT'
-    implementation 'org.jlib:jlib-exception:1.0.0-SNAPSHOT'
+    implementation 'org.jlib:jlib-message:1.0.0'
+    implementation 'org.jlib:jlib-exception:1.0.0'
 }
 
